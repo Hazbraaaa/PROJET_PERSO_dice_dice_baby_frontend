@@ -117,18 +117,16 @@ export default function GameBoard() {
     ];
 
     return (
-        <>
-            <div className="grid grid-cols-4 gap-1">
-                {cards.map((card) => (
-                    <BoardCard
-                        key={card.id}
-                        combinaison={card.combinaison}
-                        color={card.color}
-                        ptLvl1={card.ptLvl1}
-                    // ptLvl2={card.ptLvl2}
-                    />
-                ))}
-            </div>
-        </>
+        <div className="grid grid-cols-4 gap-1">
+            {cards.map((card) => (
+                <BoardCard
+                    key={card.id}
+                    combinaison={card.combinaison}
+                    color={card.color}
+                    ptLvl1={card.ptLvl1}
+                // ptLvl2={card.ptLvl2}
+                />
+            ))}
+        </div>
     );
 };
