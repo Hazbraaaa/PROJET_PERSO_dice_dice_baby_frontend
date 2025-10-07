@@ -14,7 +14,7 @@ export default function Game() {
 
       <div className="flex flex-col justify-center">
         <Hand />
-        <Button className="!bg-cyan-600 ">Lancer</Button>
+        <Button className="!bg-cyan-600">Lancer</Button>
       </div>
 
       <div className="flex justify-center">
