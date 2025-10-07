@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { ButtonLink } from "../components/ButtonLink";
+import { usePwaInstall } from "../components/usePwaInstall";
 
 export default function Home() {
   const [playersCount, setPlayersCount] = useState<string>("");
+  const { isInstallable, install } = usePwaInstall();
 
   return (
     <main className="flex flex-col justify-center items-center min-h-screen gap-10 p-4 bg-white">
@@ -43,6 +45,23 @@ export default function Home() {
         >
           Valider
         </ButtonLink>
+
+        {isInstallable && (
+          <button
+            onClick={install}
+            style={{
+              padding: "10px 20px",
+              fontSize: "16px",
+              borderRadius: "10px",
+              backgroundColor: "#ff0000",
+              color: "#fff",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            📲 Installer le jeu
+          </button>
+        )}
       </div>
     </main>
   );
